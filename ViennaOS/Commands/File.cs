@@ -75,6 +75,9 @@ namespace ViennaOS.Commands
 
                     break;
 
+                case "wrstr":
+
+
                 default:
                     Console.WriteLine("This argument is not valid, please try again with an valid argument.\n" + "(Not like Twitter)\n");
 
