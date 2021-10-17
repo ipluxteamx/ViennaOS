@@ -1,0 +1,10 @@
+C:\Users\phoen\source\repos\ViennaOS\ViennaOS\bin\Debug\netcoreapp2.0\cosmos\ViennaOS.deps.json
+C:\Users\phoen\source\repos\ViennaOS\ViennaOS\bin\Debug\netcoreapp2.0\cosmos\ViennaOS.dll
+C:\Users\phoen\source\repos\ViennaOS\ViennaOS\bin\Debug\netcoreapp2.0\cosmos\ViennaOS.pdb
+C:\Users\phoen\source\repos\ViennaOS\ViennaOS\obj\Debug\netcoreapp2.0\cosmos\ViennaOS.csproj.AssemblyReference.cache
+C:\Users\phoen\source\repos\ViennaOS\ViennaOS\obj\Debug\netcoreapp2.0\cosmos\ViennaOS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\phoen\source\repos\ViennaOS\ViennaOS\obj\Debug\netcoreapp2.0\cosmos\ViennaOS.AssemblyInfoInputs.cache
+C:\Users\phoen\source\repos\ViennaOS\ViennaOS\obj\Debug\netcoreapp2.0\cosmos\ViennaOS.AssemblyInfo.cs
+C:\Users\phoen\source\repos\ViennaOS\ViennaOS\obj\Debug\netcoreapp2.0\cosmos\ViennaOS.csproj.CoreCompileInputs.cache
+C:\Users\phoen\source\repos\ViennaOS\ViennaOS\obj\Debug\netcoreapp2.0\cosmos\ViennaOS.dll
+C:\Users\phoen\source\repos\ViennaOS\ViennaOS\obj\Debug\netcoreapp2.0\cosmos\ViennaOS.pdb
