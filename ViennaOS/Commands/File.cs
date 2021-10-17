@@ -85,6 +85,7 @@ namespace ViennaOS.Commands
                             Byte[] data = Encoding.ASCII.GetBytes(args[2]);
 
                             fs.Write(data, 0, data.Length);
+                            fs.Close();
                         } 
                         else
                         {
