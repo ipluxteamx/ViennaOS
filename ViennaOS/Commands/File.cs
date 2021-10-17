@@ -76,7 +76,17 @@ namespace ViennaOS.Commands
                     break;
 
                 case "wrstr":
+                    try
+                    {
+                        FileStream fs = (FileStream)Sys.FileSystem.VFS.VFSManager.GetFile(args[1]).GetFileStream();
+                    }
+                    catch (Exception ex)
+                    {
+                        response = ex.ToString();
+                        break;
+                    }
 
+                    break
 
                 default:
                     Console.WriteLine("This argument is not valid, please try again with an valid argument.\n" + "(Not like Twitter)\n");
