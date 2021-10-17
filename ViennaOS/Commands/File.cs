@@ -101,6 +101,25 @@ namespace ViennaOS.Commands
 
                     break;
 
+                case "rdstr":
+                    FileStream fs = (FileStream)Sys.FileSystem.VFS.VFSManager.GetFile(args[1]).GetFileStream();
+
+                    if (fs.CanRead)
+                    {
+                        Byte[] data = new Byte[256];
+
+                        fs.Read(data, 0, data.Length);
+                        response = Encoding.ASCII.GetString(data);
+                    }
+                    else
+                    {
+                        response = "Unable to read from file. Not open for reading.";
+                        break;
+                    }
+
+                    break;
+
+
                 default:
                     Console.WriteLine("This argument is not valid, please try again with an valid argument.\n" + "(Not like Twitter)\n");
 
