@@ -79,6 +79,18 @@ namespace ViennaOS.Commands
                     try
                     {
                         FileStream fs = (FileStream)Sys.FileSystem.VFS.VFSManager.GetFile(args[1]).GetFileStream();
+
+                        if (fs.CanWrite)
+                        {
+                            Byte[] data = Encoding.ASCII.GetBytes(args[2]);
+
+                            fs.Write(data, 0, data.Length);
+                        } 
+                        else
+                        {
+                            response = "Unable to write to file. Not open for writing.";
+                            break;
+                        }
                     }
                     catch (Exception ex)
                     {
@@ -86,7 +98,7 @@ namespace ViennaOS.Commands
                         break;
                     }
 
-                    break
+                    break;
 
                 default:
                     Console.WriteLine("This argument is not valid, please try again with an valid argument.\n" + "(Not like Twitter)\n");
