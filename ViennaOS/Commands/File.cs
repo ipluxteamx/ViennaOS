@@ -102,18 +102,27 @@ namespace ViennaOS.Commands
                     break;
 
                 case "rdstr":
-                    FileStream fs = (FileStream)Sys.FileSystem.VFS.VFSManager.GetFile(args[1]).GetFileStream();
-
-                    if (fs.CanRead)
+                    try
                     {
-                        Byte[] data = new Byte[256];
+                        FileStream fs = (FileStream)Sys.FileSystem.VFS.VFSManager.GetFile(args[1]).GetFileStream();
 
-                        fs.Read(data, 0, data.Length);
-                        response = Encoding.ASCII.GetString(data);
+                        if (fs.CanRead)
+                        {
+                            Byte[] data = new Byte[256];
+
+                            fs.Read(data, 0, data.Length);
+                            response = Encoding.ASCII.GetString(data);
+                        }
+                        else
+                        {
+                            response = "Unable to read from file. Not open for reading.";
+                            break;
+                        }
                     }
-                    else
+                    
+                    catch (Exception ex)
                     {
-                        response = "Unable to read from file. Not open for reading.";
+                        response = ex.ToString();
                         break;
                     }
 
