@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CommanderLibraries_v2</name>
+    </assembly>
+    <members>
+        <member name="T:CommanderLibraries_v2.TextFormatting">
+            <summary>
+            Handles various text aligning and formatting in the console.
+            </summary>
+        </member>
+        <member name="M:CommanderLibraries_v2.TextFormatting.Encode(System.String)">
+            <summary>
+            Converts the specified string into an "encoded" string.
+            </summary>
+            <param name="TextToEncode">Text to be encoded.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CommanderLibraries_v2.TextFormatting.Decode(System.String)">
+            <summary>
+            Converts an encoded string into readable text.
+            </summary>
+            <param name="EncodedText">String of encoded text to be decoded.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CommanderLibraries_v2.TextFormatting.ContainsLetters(System.String)">
+            <summary>
+            Returns whether the specified string contains letters.
+            </summary>
+            <param name="input">String to be evaluated.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CommanderLibraries_v2.TextFormatting.Indent(System.Int32)">
+            <summary>
+            Indents text.
+            </summary>
+            <param name="num">Number of spaces starting from the left.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CommanderLibraries_v2.TextFormatting.PasswordMask(System.Char)">
+            <summary>
+            Masks a string when invoked as user input.
+            </summary>
+            <param name="fill">Character in place of normally visible text</param>
+            <returns></returns>
+        </member>
+        <member name="M:CommanderLibraries_v2.TextFormatting.Pause(System.String)">
+            <summary>
+            Pauses the console, displays the specified text, and waits for a keypress.
+            </summary>
+            <param name="text">Text displayed</param>
+        </member>
+        <member name="T:CommanderLibraries_v2.FileActions">
+            <summary>
+            Handles file actions for text and Commander files.
+            </summary>
+        </member>
+        <member name="F:CommanderLibraries_v2.FileActions.FileText">
+            <summary>
+            String representing text from a text file when the method GetFile(string filepath, string text, FileModes mode) or GetCMDRFile(long security_key, string filepath, string text_to_write, FileModes mode) is called for reading.
+            </summary>
+        </member>
+        <member name="T:CommanderLibraries_v2.FileActions.FileModes">
+            <summary>
+            Stores file action types for the methods that handle file operations.
+            </summary>
+        </member>
+        <member name="F:CommanderLibraries_v2.FileActions.FileModes.ReadText">
+            <summary>
+            Indicates reading text from a file.
+            </summary>
+        </member>
+        <member name="F:CommanderLibraries_v2.FileActions.FileModes.WriteText">
+            <summary>
+            Indicates writing text to a file.
+            </summary>
+        </member>
+        <member name="F:CommanderLibraries_v2.FileActions.FileModes.Delete">
+            <summary>
+            Indicates deleting a file.
+            </summary>
+        </member>
+        <member name="F:CommanderLibraries_v2.FileActions.FileModes.Create">
+            <summary>
+            Indicates creating a file.
+            </summary>
+        </member>
+        <member name="F:CommanderLibraries_v2.FileActions.FileModes.Append">
+            <summary>
+            Indicates appending to a file.
+            </summary>
+        </member>
+        <member name="F:CommanderLibraries_v2.FileActions.FileModes.CMDR">
+            <summary>
+            Special option indicating creating a Commander file.
+            </summary>
+        </member>
+        <member name="M:CommanderLibraries_v2.FileActions.GetFile(System.String,System.String,CommanderLibraries_v2.FileActions.FileModes)">
+            <summary>
+            Handles standard file actions for text files.
+            </summary>
+            <param name="filepath">Full path of the text file.</param>
+            <param name="text">Text to write to file. Leave blank if reading, creating, or deleting a file.</param>
+            <param name="mode">Mode to open the text file as. Do not use the option 'CMDR'.</param>
+        </member>
+        <member name="M:CommanderLibraries_v2.FileActions.GetCMDRFile(System.Int64,System.String,System.String,CommanderLibraries_v2.FileActions.FileModes)">
+            <summary>
+            Preforms file actions for Commander files. If the specified security key is invalid, this method will not run.
+            </summary>
+            <param name="security_key">Security number for authentication.</param>
+            <param name="filepath">Full path of the Commander file.  If you are creating a Commander file, leave out the file extension of the file to create.</param>
+            <param name="text_to_write">Text to write to the Commander file. Leave blank if reading or creating a Commander file.</param>
+            <param name="mode">File mode for the Commander file.  Select 'CMDR' if you are creating a Commander file, and do not use 'WriteText' or 'Create'.</param>
+        </member>
+        <member name="M:CommanderLibraries_v2.FileActions.SetCMDRKey(System.Int64,System.Int64)">
+            <summary>
+            Sets the Commander security key.  If the old security key is invalid, the security key will not be changed.
+            </summary>
+            <param name="OldSecurityKey"></param>
+            <param name="NewSecurityKey"></param>
+        </member>
+    </members>
+</doc>

@@ -7,7 +7,7 @@
   "targets": {
     ".NETCoreApp,Version=v2.0": {},
     ".NETCoreApp,Version=v2.0/cosmos": {
-      "ViennaOS/1.0.0": {
+      "ViennaOS/0.2.7": {
         "dependencies": {
           "Cosmos.Build": "0.1.0-localbuild20200708061311",
           "Cosmos.Debug.Kernel": "0.1.0-localbuild20200708061311",
@@ -931,7 +931,7 @@
     }
   },
   "libraries": {
-    "ViennaOS/1.0.0": {
+    "ViennaOS/0.2.7": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

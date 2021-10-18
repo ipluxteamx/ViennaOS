@@ -1702,7 +1702,7 @@
     "C:\\Users\\phoen\\.nuget\\packages\\": {}
   },
   "project": {
-    "version": "1.0.0",
+    "version": "0.2.7",
     "restore": {
       "projectUniqueName": "C:\\Users\\phoen\\source\\repos\\ViennaOS\\ViennaOS\\ViennaOS.csproj",
       "projectName": "ViennaOS",

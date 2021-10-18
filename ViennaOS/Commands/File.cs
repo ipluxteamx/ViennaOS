@@ -23,7 +23,7 @@ namespace ViennaOS.Commands
 
                     try {
                         Sys.FileSystem.VFS.VFSManager.CreateFile(args[1]);
-                        response = "The file " + args[1] + " was sucessfully created.";
+                        response = "The file \"" + args[1] + "\" was sucessfully created.";
                     }
                     catch (Exception ex) {
                         response = ex.ToString();
@@ -36,7 +36,7 @@ namespace ViennaOS.Commands
                     try
                     {
                         Sys.FileSystem.VFS.VFSManager.DeleteFile(args[1]);
-                        response = "The file " + args[1] + " was sucessfully deleted.";
+                        response = "The file \"" + args[1] + "\" was sucessfully deleted.";
                     }
                     catch (Exception ex)
                     {
@@ -51,7 +51,7 @@ namespace ViennaOS.Commands
                     try
                     {
                         Sys.FileSystem.VFS.VFSManager.CreateDirectory(args[1]);
-                        response = "Succesfully created " + args[1] + " directory.";
+                        response = "Succesfully created \"" + args[1] + "\" directory.";
                     }
                     catch (Exception ex)
                     {
@@ -65,7 +65,7 @@ namespace ViennaOS.Commands
                     try
                     {
                         Sys.FileSystem.VFS.VFSManager.DeleteDirectory(args[1], true);
-                        response = "Sucessfully deleted " + args[1] + " directory.";
+                        response = "Sucessfully deleted \"" + args[1] + "\" directory.";
                     }
                     catch (Exception ex)
                     {
@@ -82,10 +82,23 @@ namespace ViennaOS.Commands
 
                         if (fs.CanWrite)
                         {
-                            Byte[] data = Encoding.ASCII.GetBytes(args[2]);
+                            int ctr = 0;
+                            StringBuilder sb = new StringBuilder();
+
+                            foreach (String s in args)
+                            {
+                                if (ctr > 1)
+                                    sb.Append(s + ' ');
+
+                                ++ctr;
+                            }
+
+                            String txt = sb.ToString();
+                            Byte[] data = Encoding.ASCII.GetBytes(txt.Substring(0, txt.Length - 1));
 
                             fs.Write(data, 0, data.Length);
                             fs.Close();
+                            response = "Successfully written \"" + args[2] + "\" to file \"" + args[1] + "\".\n";
                         } 
                         else
                         {
@@ -128,6 +141,46 @@ namespace ViennaOS.Commands
 
                     break;
 
+                case "ls":
+
+                    var directory_list = Sys.FileSystem.VFS.VFSManager.GetDirectoryListing(Kernel.currentDirectory);
+
+                    try
+                    {
+                        Console.WriteLine("\n");
+
+                        foreach (var directoryEntry in directory_list)
+                        {
+                            Console.WriteLine(directoryEntry.mName);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        response = ex.ToString();
+                        break;
+                    }
+
+                    break;
+
+                case "cd":
+                    try
+                    {
+                        if (Sys.FileSystem.VFS.VFSManager.DirectoryExists(args[1])) {
+                            Kernel.currentDirectory = args[1];
+                            Console.WriteLine("\nSuccessfully changed to \"" + Kernel.currentDirectory + args[1] + "\".\n");
+                        } 
+                        else
+                        {
+                            Console.WriteLine(args[1] + " does not exist.\n");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        response = ex.ToString();
+                        break;
+                    }
+
+                    break;
 
                 default:
                     Console.WriteLine("This argument is not valid, please try again with an valid argument.\n" + "(Not like Twitter)\n");

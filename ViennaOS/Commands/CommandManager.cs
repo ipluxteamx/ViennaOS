@@ -42,7 +42,7 @@ namespace ViennaOS.Commands
                 }
             }
 
-            return "Your command: \"" + label + "\" does not exist.";
+            return "The command: \"" + label + "\" does not exist.";
         }
     }
 }

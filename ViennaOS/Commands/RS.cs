@@ -16,7 +16,7 @@ namespace ViennaOS.Commands
 
             if (args[0] == null)
             {
-                Console.WriteLine("This argument isn't valid, please try again with a word or more.");
+                Console.WriteLine("This argument is not valid, please try again with an valid argument.\n" + "(Not like Twitter)\n");
             } else {
                 Console.WriteLine(args[0]);
             }
