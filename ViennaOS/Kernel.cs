@@ -19,6 +19,10 @@ namespace ViennaOS {
             Console.Clear();
             Console.WriteLine("ViennaOS beta 1 M1 \nTeamX 2021\n\n");
             Sys.Kernel.PrintDebug("[OK] ViennaOS has started correctly.");
+
+            //Set console colors
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
+            Console.ForegroundColor = ConsoleColor.White;
         }
 
         protected override void Run() {
