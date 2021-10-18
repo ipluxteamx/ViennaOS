@@ -7,7 +7,7 @@ using Cosmos.System.FileSystem;
 
 namespace ViennaOS {
     public class Kernel : Sys.Kernel {
-        private const string Value = "0:/> ";
+        public static string current_directory = @"0:\";
         private CommandManager commandManager;
         private CosmosVFS viennaFS;
 
@@ -18,10 +18,11 @@ namespace ViennaOS {
 
             Console.Clear();
             Console.WriteLine("ViennaOS beta 1 M1 \nTeamX 2021\n\n");
+            Sys.Kernel.PrintDebug("[OK] ViennaOS has started correctly.");
         }
 
         protected override void Run() {
-            Console.Write(Value);
+            Console.Write(current_directory);
             String response;
             String input = Console.ReadLine();
             response = this.commandManager.processInput(input);
